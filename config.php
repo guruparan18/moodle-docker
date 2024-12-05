@@ -37,6 +37,7 @@ if (strpos($_SERVER['HTTP_HOST'], '.gitpod.io') !== false) {
         $host = getenv('MOODLE_DOCKER_WEB_HOST');
     }
     $CFG->wwwroot   = "https://{$host}";
+    $CFG->sslproxy = true;
     $port = getenv('MOODLE_DOCKER_WEB_PORT');
     if (!empty($port)) {
         // Extract port in case the format is bind_ip:port.
